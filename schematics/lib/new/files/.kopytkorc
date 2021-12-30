@@ -1,0 +1,29 @@
+{
+  "sourceDir": "/src",
+  "baseManifest": "/manifest/default.js",
+  "localManifestOverride": "/manifest/local.${args.env}.js",
+  "archivePath": "/dist/v${manifest.major_version}.${manifest.minor_version}.${manifest.build_version}-${args.env}.zip",
+  "generatedPackagePath": "/dist/v${manifest.major_version}.${manifest.minor_version}.${manifest.build_version}-${args.env}.pkg",
+  "pluginDefinitions": {
+    "remove-test-code": "/plugins/remove-test-code"
+  },
+  "plugins": [
+    {
+      "name": "kopytko-copy-external-dependencies",
+      "preEnvironmentPlugin": true
+    },
+    "remove-test-code",
+    "kopytko-import-dependencies"
+  ],
+  "environments": {
+    "production": {
+      "manifest": "/manifest/production.js"
+    },
+    "staging": {
+      "manifest": "/manifest/staging.js"
+    },
+    "test": {
+      "manifest": "/manifest/test.js"
+    }
+  }
+}

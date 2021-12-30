@@ -1,0 +1,16 @@
+
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "new": {
+      "factory": "./lib/new/new.factory#main",
+      "description": "Create new Kopytko application.",
+      "schema": "./lib/new/schema.json"
+    },
+    "init": {
+      "factory": "./lib/init/init.factory#main",
+      "description": "Initialize Kopytko configuration.",
+      "schema": "./lib/init/schema.json"
+    }
+  }
+}

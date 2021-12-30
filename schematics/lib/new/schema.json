@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "SchematicsKopytkoNew",
+  "title": "Kopytko New Schema",
+  "type": "object",
+  "properties": {
+    "rokuIP": {
+      "type": "string",
+      "default": "",
+      "x-prompt": "What is your Roku device IP?"
+    },
+    "testingFramework": {
+      "type": "boolean",
+      "default": true,
+      "x-prompt": "Would you like to use kopytko-unit-testing-framework?"
+    }
+  }
+}
