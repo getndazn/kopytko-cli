@@ -1,0 +1,16 @@
+{
+  "env": {
+    "commonjs": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 12
+  },
+  "root": true,
+  "rules": {
+    "object-curly-spacing": ["error", "always"],
+    "no-unused-vars": ["error", { "args": "all", "argsIgnorePattern": "^_" }]
+  }
+}

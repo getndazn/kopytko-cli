@@ -1,0 +1,24 @@
+{
+  "name": "kopytko-example-app",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "package": "kopytko package",
+    "build": "kopytko build",
+    "start": "kopytko start",
+    "test": "kopytko test"
+  },
+  "devDependencies": {
+    "@dazn/eslint-plugin-kopytko": "^2.0.0",
+    "@dazn/kopytko-packager": "^1.0.3",
+    "@dazn/kopytko-unit-testing-framework": "^1.0.2",
+    "eslint-plugin-roku": "^1.5.3"
+  },
+  "dependencies": {
+    "@dazn/kopytko-cli": "^1.0.0",
+    "@dazn/kopytko-framework": "^1.0.2",
+    "@dazn/kopytko-utils": "^2.0.1"
+  }
+}

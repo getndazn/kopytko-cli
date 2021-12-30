@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="ClockView" extends="KopytkoGroup">
+  <script type="text/brightscript" uri="Clock.template.brs" />
+  <script type="text/brightscript" uri="Clock.view.brs" />
+</component>
