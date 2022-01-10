@@ -7,4 +7,5 @@ module.exports = {
   bs_const: {
     RALE: false,
   },
+  apiUrl: 'http://worldclockapi.com/api/json/cet/now'
 };

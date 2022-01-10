@@ -10,15 +10,19 @@
     "start": "kopytko start",
     "test": "kopytko test"
   },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=7.0.0"
+  },
+  "dependencies": {
+    "@dazn/kopytko-framework": "^1.0.2",
+    "@dazn/kopytko-utils": "^2.0.1"
+  },
   "devDependencies": {
     "@dazn/eslint-plugin-kopytko": "^2.0.0",
+    "@dazn/kopytko-cli": "^1.0.0",
     "@dazn/kopytko-packager": "^1.0.3",
     "@dazn/kopytko-unit-testing-framework": "^1.0.2",
     "eslint-plugin-roku": "^1.5.3"
-  },
-  "dependencies": {
-    "@dazn/kopytko-cli": "^1.0.0",
-    "@dazn/kopytko-framework": "^1.0.2",
-    "@dazn/kopytko-utils": "^2.0.1"
   }
 }

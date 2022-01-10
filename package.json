@@ -27,7 +27,8 @@
     "bin"
   ],
   "scripts": {
-    "lint": "eslint ./"
+    "test": "npm run lint",
+    "lint": "eslint actions/*.js bin/*.js commands/*.js schematics/lib/*.js schematics/lib/new/*.js"
   },
   "dependencies": {
     "@angular-devkit/core": "^13.1.2",

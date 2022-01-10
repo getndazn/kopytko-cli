@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<component name="ClockModel">
+  <interface>
+    <field id="currentDateTime" type="string" />
+  </interface>
+</component>

@@ -1,8 +1,6 @@
 const { apply, mergeWith, move, chain, template, url, branchAndMerge } = require('@angular-devkit/schematics');
-const { NodePackageInstallTask } = require('@angular-devkit/schematics/tasks');
 const { strings } = require('@angular-devkit/core');
 const { basename, parse } = require('path');
-const { removePackageJsonDependency } = require('../package-helper');
 
 function resolvePackagePath(path) {
   const { name } = parse(path);
@@ -22,28 +20,12 @@ function generate(options) {
   ]);
 }
 
-function addOrRemoveDependency(options) {
-  return (tree, context) => {
-    if (!options.testingFramework) {
-      removePackageJsonDependency(tree, {
-        type: 'devDependencies',
-        name: '@dazn/kopytko-unit-testing-framework',
-      }, options);
-    }
-
-    if (options.npmInstall) {
-      context.addTask(new NodePackageInstallTask());
-    }
-  };
-}
-
 function main(options) {
   options.path = resolvePackagePath(options.name);
 
   return (tree, context) => branchAndMerge(
     chain([
       mergeWith(generate(options)),
-      addOrRemoveDependency(options),
     ]),
   )(tree, context);
 }

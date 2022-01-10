@@ -1,4 +1,4 @@
-sub main(launchArguments as Dynamic)
+sub main(launchArguments as dynamic)
   screen = CreateObject("roSGScreen")
   port = CreateObject("roMessagePort")
 
@@ -11,5 +11,11 @@ sub main(launchArguments as Dynamic)
   while (true)
     message = Wait(0, port)
     messageType = Type(message)
+
+    if (messageType = "roSGScreenEvent")
+      if (message.isScreenClosed())
+        return
+      end if
+    end if
   end while
 end sub

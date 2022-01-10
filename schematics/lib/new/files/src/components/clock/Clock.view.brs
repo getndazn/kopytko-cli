@@ -1,7 +1,7 @@
 ' @import /components/http/request/createRequest.brs from @dazn/kopytko-framework
 sub constructor()
   m.state = {
-    currentDateTime: "Loading current date time...",
+    currentDateTime: invalid,
   }
 
   _request = createRequest("ClockRequest")

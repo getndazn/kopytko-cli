@@ -2,6 +2,7 @@
 <!--********** Copyright 2019 Roku Corp. All Rights Reserved. **********-->
 
 <component name="TrackerTask" extends="Task">
+
   <interface>
       <field id="event" type="assocarray"/>
       <field id="isExternallyExposed" type="boolean" value="true"/>
@@ -49,16 +50,16 @@
       <function name="UIThread_removeAllRulerLines"/>
   </interface>
 
+    
+    
+    
+    
+    
+    
+    
+    
 
-
-
-
-
-
-
-
-
-
+ 
 <script type = "text/brightscript" >
 <![CDATA[
 
@@ -84,6 +85,7 @@ Function RALE_InitConfig() as Object
 
     return this
 End Function
+
 
 ' CreateGuides - Selector (live) view class constructor
 ' @return {object} - selector (live) view
@@ -157,6 +159,7 @@ Sub Guides_RemoveAllLines()
     m.node.removeChildren(childrenList)
     m.childMap = {}
 end Sub
+
 
 ' RALE_Logger - Constructor of Logger class
 ' @param {integer} level - log verbosity level (0-4)
@@ -340,6 +343,7 @@ function RALE_Logger__getZeroNumber(n, to_length=2)
     return n
 end function
 
+
 ' CreateSelectorView - Selector (live) view class constructor
 ' @return {object} - selector (live) view
 Function CreateSelectorView() as Object
@@ -357,6 +361,7 @@ Function CreateSelectorView() as Object
 
         {subtype : "Rectangle", fields : {id : "horiz"}}
         {subtype : "Rectangle", fields : {id : "vert"}}
+
 
         {subtype : "Rectangle", fields : {id : "leftLine"}}
         {subtype : "Rectangle", fields : {id : "topLine"}}
@@ -633,6 +638,7 @@ Sub SelectorView_UpdateViewPosition(event)
         node.boundingRect = boundingRect
     end if
 End Sub
+
 
 ' getCommandMap - Defines map that contains all RALE commands handlers
 ' @return {object} - handlers map
@@ -1813,6 +1819,7 @@ Function getError(message as String) as Object
     return { error: { message: message } }
 End Function
 
+
 ' @desc TrackerTask init function
 Sub init()
     m.top.functionName = "tracker"
@@ -2066,6 +2073,7 @@ End Function
 Function FW_IsLongInteger(value As Dynamic) As Boolean
     Return FW_IsValid(value) And GetInterface(value, "ifLongInt") <> invalid
 End Function
+
 
 '*************************************************
 ' FW_IsNumber - check if value contains LongInteger or Integer or Double or Float interface
@@ -2390,6 +2398,7 @@ function FW_GetSubElement(element as Dynamic, subElementTree as Dynamic, delim =
 
     return result
 end function
+
 
 ' RALE_parseType - Parse type name to brs type
 ' @param {string} _type - type

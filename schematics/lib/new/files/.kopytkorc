@@ -24,6 +24,9 @@
     },
     "test": {
       "manifest": "/manifest/test.js"
+    },
+    "dev": {
+      "manifest": "/manifest/dev.js"
     }
   }
 }

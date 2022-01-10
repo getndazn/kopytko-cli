@@ -3,21 +3,14 @@ function render() as object
     {
       name: "SimpleLabel",
       props: {
-        id: "label",
-        color: "0xFFFFFFFF",
-        text: "Counter",
+        id: "numberLabel",
+        color: m._theme.textColor.primary,
+        horizOrigin: "center",
+        vertOrigin: "center",
         translation: [960, 540],
       },
-    },
-    {
-      name: "SimpleLabel",
-      props: {
-        id: "numberLabel",
-        color: "0xFFFFFFFF",
-        translation: [960, 640],
-      },
       dynamicProps: {
-        text: m.state.number.toStr(),
+        text: "Counter: " + m.state.number.toStr(),
       },
     },
   ]

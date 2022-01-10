@@ -4,7 +4,7 @@ function render() as object
       name: "SimpleLabel",
       props: {
         id: "label",
-        color: "0xFFFFFFFF",
+        color: m._theme.textColor.primary,
         text: "Kopytko example app",
         horizOrigin: "center",
         vertOrigin: "center",
@@ -15,8 +15,8 @@ function render() as object
       name: "SimpleLabel",
       props: {
         id: "labelCounter",
-        color: "0xFFFFFFFF",
-        text: "counter state: " + m.counterNumber.toStr(),
+        color: m._theme.textColor.primary,
+        text: "Counter state: " + m.counterNumber.toStr(),
         horizOrigin: "center",
         vertOrigin: "center",
         translation: [960, 540],

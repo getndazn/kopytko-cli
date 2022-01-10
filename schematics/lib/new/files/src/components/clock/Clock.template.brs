@@ -1,4 +1,13 @@
 function render() as object
+  if m.state.currentDateTime = Invalid
+    return {
+      name: "Spinner",
+      props: {
+        id: "spinner",
+      },
+    }
+  end if
+
   return {
     name: "SimpleLabel",
     props: {
@@ -6,7 +15,7 @@ function render() as object
       color: "0xFFFFFFFF",
       horizOrigin: "center",
       vertOrigin: "center",
-      translation: [640, 360],
+      translation: [960, 540],
     },
     dynamicProps: {
       text: m.state.currentDateTime,

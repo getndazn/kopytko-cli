@@ -1,12 +1,14 @@
+' @import /components/rokuComponents/AppInfo.brs from @dazn/kopytko-utils
+
 function getRequestOptions(options as Object) as Object
   return {
-    url: "http://worldclockapi.com/api/json/cet/now",
+    url: AppInfo().getValue("apiUrl"),
   }
 end function
 
 function parseResponseData(data as Object) as Object
-  parsedData = CreateObject("roSGNode", "Node")
-  parsedData.addFields(data)
+  parsedData = CreateObject("roSGNode", "ClockModel")
+  parsedData.currentDateTime = data.currentDateTime
 
   return parsedData
 end function

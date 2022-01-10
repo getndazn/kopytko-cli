@@ -6,7 +6,6 @@ const packageCommand = require('../commands/package');
 const buildCommand = require('../commands/build');
 const startCommand = require('../commands/start');
 const testCommand = require('../commands/test');
-const initCommand = require('../commands/init');
 const newCommand = require('../commands/new');
 
 const program = new Command();
@@ -24,7 +23,6 @@ packageCommand.load(program);
 buildCommand.load(program);
 startCommand.load(program);
 testCommand.load(program);
-initCommand.load(program);
 newCommand.load(program);
 
 program.parse(process.argv);
