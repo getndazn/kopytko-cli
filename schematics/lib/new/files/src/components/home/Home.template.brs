@@ -32,20 +32,22 @@ function render() as object
       },
       children: [
         {
-          name: "Button",
+          name: "NavButton",
           props: {
             id: "clockButton",
             text: "Go to /clock route",
+            route: "/clock",
           },
           events: {
             buttonSelected: "goToRoute",
           },
         },
         {
-          name: "Button",
+          name: "NavButton",
           props: {
             id: "counterButton",
             text: "Go to /counter route",
+            route: "/counter",
           },
           events: {
             buttonSelected: "goToRoute",

@@ -8,7 +8,7 @@ sub constructor()
   m._theme = ThemeFacade()
 
   m.state = {
-    number: 0,
+    number: m._store.get("counterNumber"),
   }
 
   m._intervalTimerId = Invalid

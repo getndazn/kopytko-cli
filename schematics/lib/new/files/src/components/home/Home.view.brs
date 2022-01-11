@@ -1,8 +1,11 @@
 ' @import /components/router/Router.facade.brs from @dazn/kopytko-framework
 ' @import /components/store/Store.facade.brs from @dazn/kopytko-framework
+' @import /components/theme/Theme.facade.brs from @dazn/kopytko-framework
+
 sub constructor()
   m._router = RouterFacade()
   m._store = StoreFacade()
+  m._theme = ThemeFacade()
 
   m.counterNumber = m._store.get("counterNumber")
 end sub
@@ -28,6 +31,6 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
 end function
 
 sub goToRoute(event as Object)
-  m._router.navigate("/clock")
-  ' m._router.navigate("/counter")
+  node = event.getRoSGNode()
+  m._router.navigate(node.route)
 end sub

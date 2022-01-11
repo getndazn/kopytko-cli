@@ -1,6 +1,7 @@
 {
   "extends": "plugin:@dazn/kopytko/recommended",
   "plugins": ["@dazn/kopytko"],
+  "root": true,
   "rules": {
     "@dazn/kopytko/dependencies-order": "error",
     "@dazn/kopytko/missing-trailing-comma": "error",

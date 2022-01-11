@@ -1,13 +1,19 @@
 const { apply, mergeWith, move, chain, template, url, branchAndMerge } = require('@angular-devkit/schematics');
 const { strings } = require('@angular-devkit/core');
-const { basename, parse } = require('path');
+const { basename } = require('path');
 
-function resolvePackagePath(path) {
-  const { name } = parse(path);
+function resolvePackageName(name) {
   if (name === '.') {
     return basename(process.cwd());
   }
-  return path;
+  return name;
+}
+
+function resolvePackagePath(name) {
+  if (name === '.') {
+    return '';
+  }
+  return name;
 }
 
 function generate(options) {
@@ -21,11 +27,16 @@ function generate(options) {
 }
 
 function main(options) {
-  options.path = resolvePackagePath(options.name);
+  const name = resolvePackageName(options.name);
+  const path = resolvePackagePath(options.name);
 
   return (tree, context) => branchAndMerge(
     chain([
-      mergeWith(generate(options)),
+      mergeWith(generate({
+        ...options,
+        name,
+        path,
+      })),
     ]),
   )(tree, context);
 }

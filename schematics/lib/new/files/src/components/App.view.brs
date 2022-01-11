@@ -11,7 +11,7 @@ sub constructor()
   m._store = StoreFacade()
   m._theme = ThemeFacade()
 
-  m._store.set("counterNumber", -1)
+  m._store.set("counterNumber", 0)
 end sub
 
 sub componentDidMount()

@@ -22,7 +22,7 @@
     "rokuDevId": {
       "type": "string",
       "default": "",
-      "x-prompt": "What is your Roku device id?"
+      "x-prompt": "What is your Roku device application id?"
     },
     "rokuDevSigningPassword": {
       "type": "string",
