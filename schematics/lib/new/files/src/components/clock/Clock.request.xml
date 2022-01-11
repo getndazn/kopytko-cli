@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="ClockRequest" extends="HttpRequest">
+  <script type="text/brightscript" uri="Clock.request.brs" />
+</component>

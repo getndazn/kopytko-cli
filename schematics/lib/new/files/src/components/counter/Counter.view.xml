@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="CounterView" extends="KopytkoGroup">
+  <script type="text/brightscript" uri="Counter.template.brs" />
+  <script type="text/brightscript" uri="Counter.view.brs" />
+</component>

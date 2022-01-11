@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="HomeView" extends="KopytkoGroup">
+  <script type="text/brightscript" uri="Home.template.brs" />
+  <script type="text/brightscript" uri="Home.view.brs" />
+</component>

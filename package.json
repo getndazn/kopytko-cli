@@ -1,21 +1,72 @@
 {
   "name": "@dazn/kopytko-cli",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Command line interface for Kopytko Ecosystem.",
+  "keywords": [
+    "brightscript",
+    "kopytko",
+    "roku"
+  ],
+  "contributors": [
+    "Tomasz Bazelczuk <tbazelczuk@gmail.com>",
+    "Tomasz Rejment <trejment@gmail.com>",
+    "Błażej Chełkowski <blazej.chelkowski@outlook.com>"
+  ],
+  "bin": {
+    "kopytko": "bin/kopytko.js"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=7.0.0"
+  },
+  "files": [
+    "schematics",
+    "commands",
+    "options",
+    "actions",
+    "bin"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run lint",
+    "lint": "eslint -c .eslintrc .",
+    "cleanup": "find . -name '.DS_Store' -type f -delete",
+    "prepare": "husky install"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/getndazn/kopytko-cli.git"
+  "dependencies": {
+    "@angular-devkit/core": "^13.1.2",
+    "@angular-devkit/schematics": "^13.1.2",
+    "ansi-colors": "^4.1.1",
+    "commander": "^8.3.0",
+    "inquirer": "^8.2.0"
   },
-  "author": "",
-  "publishConfig": {
-    "access": "restricted"
+  "devDependencies": {
+    "eslint": "^8.5.0",
+    "husky": "^7.0.4"
+  },
+  "peerDependencies": {
+    "@dazn/kopytko-packager": "^1.0.3",
+    "@dazn/kopytko-unit-testing-framework": "^1.0.2"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/getndazn/kopytko-cli.git"
+  },
   "bugs": {
     "url": "https://github.com/getndazn/kopytko-cli/issues"
   },
-  "homepage": "https://github.com/getndazn/kopytko-cli#readme"
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "schematics": "./schematics/collection.json",
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/changelog",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  }
 }
