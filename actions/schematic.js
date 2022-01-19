@@ -1,10 +1,9 @@
 const tools = require('@angular-devkit/schematics/tools');
 const node = require('@angular-devkit/core/node');
-const ansiColors = require('ansi-colors');
+const colors = require('ansi-colors');
 const inquirer = require('inquirer');
 const path = require('path');
 
-const colors = ansiColors.create();
 const logger = node.createConsoleLogger();
 
 function createPromptProvider() {

@@ -5,7 +5,7 @@ function load(program) {
   program
     .command('build')
     .alias('b')
-    .description('Compiles an application into an output folder.')
+    .description('Compiles an application into an output folder')
     .addOption(envOption)
     .addOption(forceHttpOption)
     .action(() => {

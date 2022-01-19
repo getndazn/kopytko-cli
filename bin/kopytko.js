@@ -14,10 +14,10 @@ program
   .version(
     require('../package.json').version,
     '-v, --version',
-    'Output the current version.',
+    'Output the current version',
   )
   .usage('<command> [options]')
-  .helpOption('-h, --help', 'Output usage information.');
+  .helpOption('-h, --help', 'Output usage information');
 
 packageCommand.load(program);
 buildCommand.load(program);

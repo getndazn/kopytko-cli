@@ -1,6 +1,0 @@
-{
-  "sourceDir": "/src",
-  "baseManifest": "/manifest.js",
-  "archivePath": "/dist/v${manifest.major_version}.${manifest.minor_version}.${manifest.build_version}-${args.env}.zip",
-  "generatedPackagePath": "/dist/v${manifest.major_version}.${manifest.minor_version}.${manifest.build_version}-${args.env}.pkg"
-}

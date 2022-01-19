@@ -1,5 +1,5 @@
 {
-  "name": "kopytko-example-app",
+  "name": "<%= name %>",
   "version": "1.0.0",
   "description": "",
   "license": "MIT",
@@ -21,7 +21,7 @@
   "devDependencies": {
     "@dazn/eslint-plugin-kopytko": "^2.0.0",
     "@dazn/kopytko-cli": "^1.0.0",
-    "@dazn/kopytko-packager": "^1.0.3",
+    "@dazn/kopytko-packager": "^1.1.2",
     "@dazn/kopytko-unit-testing-framework": "^1.0.2",
     "eslint-plugin-roku": "^1.5.3"
   }

@@ -9,13 +9,13 @@ function load(program) {
   program
     .command('start')
     .alias('s')
-    .description('Compiles and runs an application on a Roku device.')
+    .description('Compiles and runs an application on a Roku device')
     .addOption(envOption)
     .addOption(rokuIPOption)
     .addOption(rokuDevUserOption)
     .addOption(rokuDevPasswordOption)
-    .addOption(telnetOption)
     .addOption(forceHttpOption)
+    .addOption(telnetOption)
     .action(() => {
       try {
         require('../actions/start');

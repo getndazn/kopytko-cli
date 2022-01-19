@@ -13,7 +13,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version-file: '.nvmrc'
+          cache: 'npm'
       - name: Semantic Release
         id: release
         uses: cycjimmy/semantic-release-action@v2

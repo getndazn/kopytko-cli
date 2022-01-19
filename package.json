@@ -27,21 +27,17 @@
     "bin"
   ],
   "scripts": {
-    "test": "npm run lint",
-    "lint": "eslint -c .eslintrc .",
-    "cleanup": "find . -name '.DS_Store' -type f -delete",
-    "prepare": "husky install"
+    "lint": "eslint -c .eslintrc ."
   },
   "dependencies": {
-    "@angular-devkit/core": "^13.1.2",
-    "@angular-devkit/schematics": "^13.1.2",
+    "@angular-devkit/core": "^13.1.3",
+    "@angular-devkit/schematics": "^13.1.3",
     "ansi-colors": "^4.1.1",
     "commander": "^8.3.0",
     "inquirer": "^8.2.0"
   },
   "devDependencies": {
-    "eslint": "^8.5.0",
-    "husky": "^7.0.4"
+    "eslint": "^8.7.0"
   },
   "peerDependencies": {
     "@dazn/kopytko-packager": "^1.0.3",
@@ -56,7 +52,7 @@
     "url": "https://github.com/getndazn/kopytko-cli/issues"
   },
   "publishConfig": {
-    "access": "restricted"
+    "access": "public"
   },
   "schematics": "./schematics/collection.json",
   "release": {

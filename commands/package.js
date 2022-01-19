@@ -1,4 +1,5 @@
 const rokuDevSigningPasswordOption = require('../options/rokuDevSigningPassword');
+const signedPackagePathOption = require('../options/signedPackagePath');
 const rokuDevPasswordOption = require('../options/rokuDevPassword');
 const rokuDevUserOption = require('../options/rokuDevUser');
 const forceHttpOption = require('../options/forceHttp');
@@ -11,13 +12,14 @@ function load(program) {
   program
     .command('package')
     .alias('p')
-    .description('Compiles and signs an application into an output folder.')
+    .description('Compiles and signs an application into an output folder')
     .addOption(envOption)
     .addOption(rokuIPOption)
     .addOption(rokuDevIdOption)
     .addOption(rokuDevUserOption)
     .addOption(rokuDevPasswordOption)
     .addOption(rokuDevSigningPasswordOption)
+    .addOption(signedPackagePathOption)
     .addOption(telnetOption)
     .addOption(forceHttpOption)
     .action(() => {

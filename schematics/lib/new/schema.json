@@ -16,7 +16,7 @@
     },
     "rokuDevPassword": {
       "type": "string",
-      "default": "rokudev",
+      "default": "",
       "x-prompt": "What is your Roku device dev password?"
     },
     "rokuDevId": {

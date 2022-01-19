@@ -1,19 +1,19 @@
 const rokuDevPasswordOption = require('../options/rokuDevPassword');
+const testFileNameOption = require('../options/testFileName');
 const rokuDevUserOption = require('../options/rokuDevUser');
 const forceHttpOption = require('../options/forceHttp');
 const rokuIPOption = require('../options/rokuIP');
 const telnetOption = require('../options/telnet');
-const envOption = require('../options/env');
 
 function load(program) {
   program
-    .command('test')
+    .command('test [testFileName]')
     .alias('t')
-    .description('Compiles and runs unit tests on a Roku device.')
-    .addOption(envOption)
+    .description('Compiles and runs unit tests on a Roku device')
     .addOption(rokuIPOption)
     .addOption(rokuDevUserOption)
     .addOption(rokuDevPasswordOption)
+    .addOption(testFileNameOption)
     .addOption(telnetOption)
     .addOption(forceHttpOption)
     .action(() => {

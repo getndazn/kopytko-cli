@@ -1,5 +1,4 @@
 const { Option } = require('commander');
 
-module.exports = new Option('--telnet <true|false>', 'Enables telnet.')
-  .default('false')
+module.exports = new Option('--telnet', 'Enables telnet')
   .env('TELNET');

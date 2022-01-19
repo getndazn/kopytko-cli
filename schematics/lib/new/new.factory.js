@@ -1,42 +1,43 @@
 const { apply, mergeWith, move, chain, template, url, branchAndMerge } = require('@angular-devkit/schematics');
+const { NodePackageInstallTask } = require('@angular-devkit/schematics/tasks');
 const { strings } = require('@angular-devkit/core');
-const { basename } = require('path');
+const { basename, parse } = require('path');
 
-function resolvePackageName(name) {
+function resolvePackageName(path) {
+  const { name } = parse(path);
   if (name === '.') {
     return basename(process.cwd());
   }
   return name;
 }
 
-function resolvePackagePath(name) {
-  if (name === '.') {
-    return '';
-  }
-  return name;
-}
-
-function generate(options) {
+function generate(options, path) {
   return apply(url('./files'), [
     template({
       ...strings,
       ...options,
     }),
-    move(options.path),
+    move(path),
   ]);
 }
 
+function installTask(options, path) {
+  return (_, context) => {
+    if (!options.skipInstall) {
+      context.addTask(new NodePackageInstallTask(path));
+    }
+  }
+}
+
 function main(options) {
-  const name = resolvePackageName(options.name);
-  const path = resolvePackagePath(options.name);
+  const path = strings.dasherize(options.name);
+
+  options.name = strings.dasherize(resolvePackageName(path));
 
   return (tree, context) => branchAndMerge(
     chain([
-      mergeWith(generate({
-        ...options,
-        name,
-        path,
-      })),
+      mergeWith(generate(options, path)),
+      installTask(options, path),
     ]),
   )(tree, context);
 }
