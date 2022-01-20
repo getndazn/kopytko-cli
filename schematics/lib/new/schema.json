@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "SchematicsKopytkoNew",
+  "title": "Kopytko New Application Schema",
+  "type": "object",
+  "properties": {
+    "rokuIP": {
+      "type": "string",
+      "default": "",
+      "x-prompt": "What is your Roku device IP address?"
+    },
+    "rokuDevUser": {
+      "type": "string",
+      "default": "rokudev",
+      "x-prompt": "What is your Roku device dev user?"
+    },
+    "rokuDevPassword": {
+      "type": "string",
+      "default": "",
+      "x-prompt": "What is your Roku device dev password?"
+    },
+    "rokuDevId": {
+      "type": "string",
+      "default": "",
+      "x-prompt": "What is your Roku device application id?"
+    },
+    "rokuDevSigningPassword": {
+      "type": "string",
+      "default": "",
+      "x-prompt": "What is your Roku device signing password?"
+    }
+  }
+}

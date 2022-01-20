@@ -1,0 +1,68 @@
+{
+  "name": "@dazn/kopytko-cli",
+  "version": "1.0.0",
+  "description": "Command line interface for Kopytko Ecosystem.",
+  "keywords": [
+    "brightscript",
+    "kopytko",
+    "roku"
+  ],
+  "contributors": [
+    "Tomasz Bazelczuk <tbazelczuk@gmail.com>",
+    "Tomasz Rejment <trejment@gmail.com>",
+    "Błażej Chełkowski <blazej.chelkowski@outlook.com>"
+  ],
+  "bin": {
+    "kopytko": "bin/kopytko.js"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "files": [
+    "schematics",
+    "commands",
+    "options",
+    "actions",
+    "bin"
+  ],
+  "scripts": {
+    "lint": "eslint -c .eslintrc ."
+  },
+  "dependencies": {
+    "@angular-devkit/core": "^13.1.4",
+    "@angular-devkit/schematics": "^13.1.4",
+    "ansi-colors": "^4.1.1",
+    "commander": "^8.3.0",
+    "inquirer": "^8.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.7.0"
+  },
+  "peerDependencies": {
+    "@dazn/kopytko-packager": "^1.0.3",
+    "@dazn/kopytko-unit-testing-framework": "^1.0.2"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/getndazn/kopytko-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/getndazn/kopytko-cli/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "schematics": "./schematics/collection.json",
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/changelog",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  }
+}
