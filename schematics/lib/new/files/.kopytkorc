@@ -5,28 +5,31 @@
   "archivePath": "/dist/v${manifest.major_version}.${manifest.minor_version}.${manifest.build_version}-${args.env}.zip",
   "generatedPackagePath": "/dist/v${manifest.major_version}.${manifest.minor_version}.${manifest.build_version}-${args.env}.pkg",
   "pluginDefinitions": {
+    "generate-tests": "/node_modules/@dazn/kopytko-unit-testing-framework/plugins/generate-tests",
     "remove-test-code": "/plugins/remove-test-code"
   },
   "plugins": [
     {
       "name": "kopytko-copy-external-dependencies",
       "preEnvironmentPlugin": true
-    },
-    "remove-test-code",
-    "kopytko-import-dependencies"
+    }
   ],
   "environments": {
     "production": {
-      "manifest": "/manifest/production.js"
+      "manifest": "/manifest/production.js",
+      "plugins": ["remove-test-code", "kopytko-import-dependencies"]
     },
     "staging": {
-      "manifest": "/manifest/staging.js"
+      "manifest": "/manifest/staging.js",
+      "plugins": ["remove-test-code", "kopytko-import-dependencies"]
     },
     "test": {
-      "manifest": "/manifest/test.js"
+      "manifest": "/manifest/test.js",
+      "plugins": ["generate-tests"]
     },
     "dev": {
-      "manifest": "/manifest/dev.js"
+      "manifest": "/manifest/dev.js",
+      "plugins": ["remove-test-code", "kopytko-import-dependencies"]
     }
   }
 }
