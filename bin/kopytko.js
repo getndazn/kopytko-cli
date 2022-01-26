@@ -2,6 +2,7 @@
 
 const { Command } = require('commander');
 
+const screenshotCommand = require('../commands/screenshot');
 const packageCommand = require('../commands/package');
 const buildCommand = require('../commands/build');
 const startCommand = require('../commands/start');
@@ -19,6 +20,7 @@ program
   .usage('<command> [options]')
   .helpOption('-h, --help', 'Output usage information');
 
+screenshotCommand.load(program);
 packageCommand.load(program);
 buildCommand.load(program);
 startCommand.load(program);
