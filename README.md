@@ -39,10 +39,11 @@ kopytko <command> --help
 ```
 
 
-| Command | Alias | Description |
-|:----------:|:-------------:|------|
-| package |	p |	Compiles and signs an application into an output folder |
-| build |	b |	Compiles an application into an output folder |
-| start |	s |	Compiles and runs an application on a Roku device |
-| test |	t |	Compiles and runs unit tests on a Roku device |
-| new |	n |	Creates new kopytko application |
+|  Command   | Alias | Description                                              |
+|:----------:|:-----:|----------------------------------------------------------|
+| screenshot |  	sc  | 	Takes a screenshot of current application               |
+|  package   |  	p   | 	Compiles and signs an application into an output folder |
+|   build    |  	b   | 	Compiles an application into an output folder           |
+|   start    |  	s   | 	Compiles and runs an application on a Roku device       |
+|    test    |  	t   | 	Compiles and runs unit tests on a Roku device           |
+|    new     |  	n   | 	Creates new kopytko application                         |
