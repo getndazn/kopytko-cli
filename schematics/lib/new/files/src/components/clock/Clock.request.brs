@@ -1,14 +1,14 @@
 ' @import /components/rokuComponents/AppInfo.brs from @dazn/kopytko-utils
 
-function getRequestOptions(options as Object) as Object
+function getRequestOptions(options as object) as object
   return {
     url: AppInfo().getValue("apiUrl"),
   }
 end function
 
-function parseResponseData(data as Object) as Object
+function parseResponseData(data as object) as object
   parsedData = CreateObject("roSGNode", "ClockModel")
-  parsedData.currentDateTime = data.currentDateTime
+  parsedData.currentDateTime = data.dateTime
 
   return parsedData
 end function
