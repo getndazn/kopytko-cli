@@ -8,7 +8,7 @@ end function
 
 function parseResponseData(data as Object) as Object
   parsedData = CreateObject("roSGNode", "ClockModel")
-  parsedData.currentDateTime = data.currentDateTime
+  parsedData.currentDateTime = data.dateTime
 
   return parsedData
 end function
