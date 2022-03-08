@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/getndazn/kopytko-cli/compare/v1.0.0...v1.0.1) (2022-03-08)
+
+
+### Bug Fixes
+
+* update eslint dependency ([#12](https://github.com/getndazn/kopytko-cli/issues/12)) ([90ad827](https://github.com/getndazn/kopytko-cli/commit/90ad82754f75e4c0d3ff4a2b7df0e36e01cc4b99))
+
 # 1.0.0 (2022-02-10)
 
 
