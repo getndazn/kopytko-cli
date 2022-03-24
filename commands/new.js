@@ -1,6 +1,11 @@
 const colors = require('ansi-colors');
-const schematicAction = require('../actions/schematic');
+const rokuDevSigningPassword = require('../options/rokuDevSigningPassword');
+const rokuDevPasswordOption = require('../options/rokuDevPassword');
+const rokuDevUserOption = require('../options/rokuDevUser');
 const skipInstallOption = require('../options/skipInstall');
+const rokuDevIdOption = require('../options/rokuDevId');
+const schematicAction = require('../actions/schematic');
+const rokuIPOption = require('../options/rokuIP');
 const dryRunOption = require('../options/dryRun');
 
 function load(program) {
@@ -10,6 +15,11 @@ function load(program) {
     .description('Creates new kopytko application')
     .addOption(skipInstallOption)
     .addOption(dryRunOption)
+    .addOption(rokuIPOption)
+    .addOption(rokuDevIdOption)
+    .addOption(rokuDevUserOption)
+    .addOption(rokuDevPasswordOption)
+    .addOption(rokuDevSigningPassword)
     .action(async (name, options) => {
       try {
         await schematicAction.execute({
