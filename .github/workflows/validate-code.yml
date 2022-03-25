@@ -16,3 +16,23 @@ jobs:
         run: npm ci
       - name: Run linter
         run: npm run lint
+
+  build:
+    runs-on: ${{ matrix.os }}
+    needs: validate-code
+    strategy:
+      matrix:
+        os: [windows-latest]
+        node: [16]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Dependencies
+        run:  |
+          npm ci
+          npm link
+          kopytko new test-app --rokuIP=foo --rokuDevUser=bar --rokuDevPassword=baz --rokuDevId=qux --rokuDevSigningPassword=quux
+          rm test-app/node_modules/.bin/kopytko*
+          npm ls
+      - name: Run build
+        run: npm run build --prefix=test-app -- test

@@ -40,8 +40,8 @@
     "eslint": "^8.7.0"
   },
   "peerDependencies": {
-    "@dazn/kopytko-packager": "^1.2.0",
-    "@dazn/kopytko-unit-testing-framework": "^1.0.2"
+    "@dazn/kopytko-packager": "^1.2.3",
+    "@dazn/kopytko-unit-testing-framework": "^1.0.4"
   },
   "license": "MIT",
   "repository": {

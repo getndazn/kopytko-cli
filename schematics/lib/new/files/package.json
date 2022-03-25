@@ -22,8 +22,8 @@
   "devDependencies": {
     "@dazn/eslint-plugin-kopytko": "^2.1.0",
     "@dazn/kopytko-cli": "^1.0.0",
-    "@dazn/kopytko-packager": "^1.2.1",
-    "@dazn/kopytko-unit-testing-framework": "^1.0.3",
+    "@dazn/kopytko-packager": "^1.2.3",
+    "@dazn/kopytko-unit-testing-framework": "^1.0.4",
     "eslint": "^8.10.0"
   }
 }
