@@ -8,36 +8,33 @@ function TestSuite__ClockView() as Object
   ts = KopytkoFrameworkTestSuite()
   ts.name = "ClockView"
 
-  ts.setBeforeEach(sub (ts as Object)
-    m.__clockResponsePromise = Promise()
-
-    m.__mocks.createRequest = {
-      getReturnValue: function (params as Object, m as Object) as Dynamic
-        return m.__clockResponsePromise
-      end function,
-    }
+  beforeEach(sub ()
+    mockFunction("createRequest").returnValue(Promise())
   end sub)
 
-  ts.addTest("should show spinner until request fulfills", function (ts as Object) as String
+  it("should show spinner until request fulfills", function () as String
     ' When
     initKopytko()
 
     ' Then
-    return ts.assertNotInvalid(m.spinner)
+    return expect(m.spinner).toBeValid()
   end function)
 
-  ts.addTest("should make a request upon component creation", function (ts as Object) as String
+  it("should make a request upon component creation", function () as Object
     ' When
     initKopytko()
 
     ' Then
-    return ts.assertRequestWasMade({ task: "ClockRequest" })
+    return [
+      expect("createRequest").toHaveBeenCalledTimes(1),
+      expect("createRequest").toHaveBeenCalledWith({ data: {}, options: {}, task: "ClockRequest" }),
+    ]
   end function)
 
-  ts.addTest("should show current datetime if clock request succeeded", function (ts as Object) as String
+  it("should show current datetime if clock request succeeded", function () as String
     ' Given
     expected = "dateTime"
-    m.__clockResponsePromise = PromiseResolve({ currentDateTime: expected })
+    mockFunction("createRequest").resolvedValue({ currentDateTime: expected })
     initKopytko()
 
     ' When
@@ -46,12 +43,12 @@ function TestSuite__ClockView() as Object
     ' Then
     actual = m.label.text
 
-    return ts.assertEqual(expected, actual)
+    return expect(actual).toBe(expected)
   end function)
 
-  ts.addTest("should show error if clock request failed", function (ts as Object) as String
+  it("should show error if clock request failed", function () as String
     ' Given
-    m.__clockResponsePromise = PromiseReject("error")
+    mockFunction("createRequest").rejectedValue("error")
     initKopytko()
 
     ' When
@@ -61,7 +58,7 @@ function TestSuite__ClockView() as Object
     expected = "Response error"
     actual = m.label.text
 
-    return ts.assertEqual(expected, actual)
+    return expect(actual).toBe(expected)
   end function)
 
   return ts
