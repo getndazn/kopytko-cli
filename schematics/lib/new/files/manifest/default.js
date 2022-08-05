@@ -5,6 +5,7 @@ module.exports = {
   title: 'Kopytko Example App',
   ui_resolutions: 'fhd',
   bs_const: {
+    insertKopytkoUnitTestSuiteArgument: false,
     RALE: false,
   },
   apiUrl: 'https://www.timeapi.io/api/Time/current/zone?timeZone=Europe/Paris'

@@ -9,26 +9,18 @@ function TestSuite__CounterView() as Object
   ts = KopytkoFrameworkTestSuite()
   ts.name = "CounterView"
 
-  ts.setBeforeEach(sub (ts as Object)
+  beforeEach(sub ()
     m.__clock = fakeClock(m)
 
-    m.__mocks = {
-      storeFacade: {
-        get: {
-          returnValue: 0,
-        },
-      },
-      themeFacade: {
-        properties: {
-          textColor: { primary: "0xFFFFFF" },
-        },
-      },
-    }
+    mockFunction("StoreFacade.get").returnValue(0)
+    mockFunction("ThemeFacade").returnValue({
+      textColor: { primary: "0xFFFFFF" },
+    })
   end sub)
 
-  ts.addTest("should show counterNumber from the Store as a Counter value", function (ts as Object) as String
+  it("should show counterNumber from the Store as a Counter value", function () as String
     ' Given
-    m.__mocks.storeFacade.get.returnValue = 4
+    mockFunction("StoreFacade.get").returnValue(4)
 
     ' When
     initKopytko()
@@ -37,10 +29,10 @@ function TestSuite__CounterView() as Object
     expected = "Counter: 4"
     actual = m.numberLabel.text
 
-    return ts.assertEqual(expected, actual)
+    return expect(actual).toBe(expected)
   end function)
 
-  ts.addTest("should increment counterNumber in the Store each second", function (ts as Object) as String
+  it("should increment counterNumber in the Store each second", function () as Object
     ' Given
     initKopytko()
 
@@ -48,10 +40,17 @@ function TestSuite__CounterView() as Object
     m.__clock.tick(5)
 
     ' Then
-    return ts.assertMethodWasCalled("StoreFacade.set", { key: "counterNumber" }, { times: 5 })
+    return [
+      expect("StoreFacade.set").toHaveBeenCalledTimes(5),
+      expect("StoreFacade.set").toHaveBeenNthCalledWith(1, { key: "counterNumber", value: 1 }),
+      expect("StoreFacade.set").toHaveBeenNthCalledWith(2, { key: "counterNumber", value: 2 }),
+      expect("StoreFacade.set").toHaveBeenNthCalledWith(3, { key: "counterNumber", value: 3 }),
+      expect("StoreFacade.set").toHaveBeenNthCalledWith(4, { key: "counterNumber", value: 4 }),
+      expect("StoreFacade.set").toHaveBeenNthCalledWith(5, { key: "counterNumber", value: 5 }),
+    ]
   end function)
 
-  ts.addTest("should show proper counter number after some time", function (ts as Object) as String
+  it("should show proper counter number after some time", function () as String
     ' Given
     initKopytko()
 
@@ -62,10 +61,10 @@ function TestSuite__CounterView() as Object
     expected = "Counter: 2"
     actual = m.numberLabel.text
 
-    return ts.assertEqual(expected, actual)
+    return expect(actual).toBe(expected)
   end function)
 
-  ts.addTest("should clear counter update interval upon component destroy", function (ts as Object) as String
+  it("should clear counter update interval upon component destroy", function () as String
     ' Given
     initKopytko()
 
@@ -73,7 +72,7 @@ function TestSuite__CounterView() as Object
     destroyKopytko()
 
     ' Then
-    return ts.assertMethodWasCalled("clearInterval", {}, { times: 1 })
+    return expect("clearInterval").toHaveBeenCalledTimes(1)
   end function)
 
   return ts

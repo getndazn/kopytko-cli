@@ -37,11 +37,11 @@
     "inquirer": "^8.2.0"
   },
   "devDependencies": {
-    "eslint": "^8.7.0"
+    "eslint": "^8.21.0"
   },
   "peerDependencies": {
-    "@dazn/kopytko-packager": "^1.2.0",
-    "@dazn/kopytko-unit-testing-framework": "^1.0.2"
+    "@dazn/kopytko-packager": "^1.2.3",
+    "@dazn/kopytko-unit-testing-framework": "^2.0.2"
   },
   "license": "MIT",
   "repository": {
