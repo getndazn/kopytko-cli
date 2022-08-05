@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/getndazn/kopytko-cli/compare/v1.0.1...v2.0.0) (2022-08-05)
+
+
+### Features
+
+* integrate new unit testing framework with new project schema ([#15](https://github.com/getndazn/kopytko-cli/issues/15)) ([b8f7108](https://github.com/getndazn/kopytko-cli/commit/b8f7108175422377ad34ead15fffc8ced364ffef))
+
+
+### BREAKING CHANGES
+
+* integrate the new unit testing framework major version
+
 ## [1.0.1](https://github.com/getndazn/kopytko-cli/compare/v1.0.0...v1.0.1) (2022-03-08)
 
 
