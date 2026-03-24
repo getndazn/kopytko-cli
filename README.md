@@ -38,7 +38,6 @@ kopytko --help
 kopytko <command> --help
 ```
 
-
 |  Command   | Alias | Description                                              |
 |:----------:|:-----:|----------------------------------------------------------|
 | screenshot |  	sc  | 	Takes a screenshot of current application               |

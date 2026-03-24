@@ -1,7 +1,6 @@
 const rokuDevSigningPasswordOption = require('../options/rokuDevSigningPassword');
 const signedPackagePathOption = require('../options/signedPackagePath');
 const rokuDevPasswordOption = require('../options/rokuDevPassword');
-const rokuDevUserOption = require('../options/rokuDevUser');
 const forceHttpOption = require('../options/forceHttp');
 const rokuDevIdOption = require('../options/rokuDevId');
 const rokuIPOption = require('../options/rokuIP');
@@ -16,7 +15,6 @@ function load(program) {
     .addOption(envOption)
     .addOption(rokuIPOption)
     .addOption(rokuDevIdOption)
-    .addOption(rokuDevUserOption)
     .addOption(rokuDevPasswordOption)
     .addOption(rokuDevSigningPasswordOption)
     .addOption(signedPackagePathOption)
