@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/getndazn/kopytko-cli/compare/v2.0.0...v2.0.1) (2026-03-24)
+
+
+### Bug Fixes
+
+* remove redundant ROKU_DEV_USER ([#18](https://github.com/getndazn/kopytko-cli/issues/18)) ([32cfe46](https://github.com/getndazn/kopytko-cli/commit/32cfe46f88890110fc1e39725c1cecc62a4813b4))
+
 # [2.0.0](https://github.com/getndazn/kopytko-cli/compare/v1.0.1...v2.0.0) (2022-08-05)
 
 
