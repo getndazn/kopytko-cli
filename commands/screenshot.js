@@ -1,5 +1,4 @@
 const rokuDevPasswordOption = require('../options/rokuDevPassword');
-const rokuDevUserOption = require('../options/rokuDevUser');
 const rokuIPOption = require('../options/rokuIP');
 
 function load(program) {
@@ -8,7 +7,6 @@ function load(program) {
     .alias('sc')
     .description('Takes a screenshot of the dev application')
     .addOption(rokuIPOption)
-    .addOption(rokuDevUserOption)
     .addOption(rokuDevPasswordOption)
     .action(() => {
       try {

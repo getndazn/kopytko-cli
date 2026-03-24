@@ -1,5 +1,4 @@
 const rokuDevPasswordOption = require('../options/rokuDevPassword');
-const rokuDevUserOption = require('../options/rokuDevUser');
 const forceHttpOption = require('../options/forceHttp');
 const rokuIPOption = require('../options/rokuIP');
 const telnetOption = require('../options/telnet');
@@ -12,7 +11,6 @@ function load(program) {
     .description('Compiles and runs an application on a Roku device')
     .addOption(envOption)
     .addOption(rokuIPOption)
-    .addOption(rokuDevUserOption)
     .addOption(rokuDevPasswordOption)
     .addOption(forceHttpOption)
     .addOption(telnetOption)

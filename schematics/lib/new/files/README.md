@@ -20,7 +20,6 @@ You can change predefined configuration inside `.env` file:
 
 ```
 ROKU_IP=
-ROKU_DEV_USER=
 ROKU_DEV_PASSWORD=
 
 ROKU_DEV_ID=

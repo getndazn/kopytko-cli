@@ -25,7 +25,6 @@ function createEnvFile(options, path) {
   return (tree) => {
     tree.create(path + '/.env', `
 ROKU_IP=${options.rokuIP}
-ROKU_DEV_USER=${options.rokuDevUser}
 ROKU_DEV_PASSWORD=${options.rokuDevPassword}
 
 ROKU_DEV_ID=${options.rokuDevId}
