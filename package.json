@@ -15,10 +15,6 @@
   "bin": {
     "kopytko": "bin/kopytko.js"
   },
-  "engines": {
-    "node": ">=22.0.0",
-    "npm": ">=10.0.0"
-  },
   "files": [
     "schematics",
     "commands",
@@ -44,7 +40,7 @@
     "semantic-release": "^25.0.3"
   },
   "peerDependencies": {
-    "@dazn/kopytko-packager": "^1.3.1",
+    "@dazn/kopytko-packager": "^1.4.0",
     "@dazn/kopytko-unit-testing-framework": "^2.5.0"
   },
   "license": "MIT",
