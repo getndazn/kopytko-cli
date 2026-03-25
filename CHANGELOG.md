@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/getndazn/kopytko-cli/compare/v2.0.1...v2.0.2) (2026-03-25)
+
+
+### Bug Fixes
+
+* update dependencies with node 24 ([#19](https://github.com/getndazn/kopytko-cli/issues/19)) ([747af9e](https://github.com/getndazn/kopytko-cli/commit/747af9e04474dfeaf37206dd80d79bcd878b8892))
+
 ## [2.0.1](https://github.com/getndazn/kopytko-cli/compare/v2.0.0...v2.0.1) (2026-03-24)
 
 
