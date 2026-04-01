@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/getndazn/kopytko-cli/compare/v2.0.2...v2.1.0) (2026-04-01)
+
+
+### Features
+
+* add --tests option to test command ([#20](https://github.com/getndazn/kopytko-cli/issues/20)) ([e2362ac](https://github.com/getndazn/kopytko-cli/commit/e2362acf382f0f4835f7f5f734d6f17cfce693d2))
+
 ## [2.0.2](https://github.com/getndazn/kopytko-cli/compare/v2.0.1...v2.0.2) (2026-03-25)
 
 
