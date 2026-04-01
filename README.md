@@ -46,3 +46,27 @@ kopytko <command> --help
 |   start    |  	s   | 	Compiles and runs an application on a Roku device       |
 |    test    |  	t   | 	Compiles and runs unit tests on a Roku device           |
 |    new     |  	n   | 	Creates new kopytko application                         |
+
+## Test command options
+
+| Option | Env var | Description |
+|--------|---------|-------------|
+| `--testFileName=<name>` | `TEST_FILE_NAME` | Run only tests whose file name matches `<name>` |
+| `--tests=<patterns>` | `TESTS` | Semicolon-separated glob patterns of unit names to build and run (e.g. `Home*;Video*;Button`). Filters at build time — only matching test files are compiled and deployed |
+| `--forceConnect` | — | Kill any process occupying port 8085 before connecting to read test results |
+| `--rokuIP=<ip>` | `ROKU_IP` | IP address of the target Roku device |
+| `--rokuDevPassword=<password>` | `ROKU_DEV_PASSWORD` | Developer password for the target Roku device |
+
+```shell
+# Run all tests
+npm test
+
+# Run tests for a single unit (shorthand)
+npm test -- MyService
+
+# Run tests matching glob patterns in a single build+deploy
+npm test -- --tests="Home*;Video*;Button"
+
+# Force-take port 8085 if occupied
+npm test -- --forceConnect
+```
