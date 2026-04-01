@@ -1,5 +1,6 @@
 const rokuDevPasswordOption = require('../options/rokuDevPassword');
 const testFileNameOption = require('../options/testFileName');
+const testsOption = require('../options/tests');
 const forceConnectOption = require('../options/forceConnect');
 const forceHttpOption = require('../options/forceHttp');
 const rokuIPOption = require('../options/rokuIP');
@@ -13,6 +14,7 @@ function load(program) {
     .addOption(rokuIPOption)
     .addOption(rokuDevPasswordOption)
     .addOption(testFileNameOption)
+    .addOption(testsOption)
     .addOption(telnetOption)
     .addOption(forceHttpOption)
     .addOption(forceConnectOption)
