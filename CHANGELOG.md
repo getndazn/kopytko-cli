@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/getndazn/kopytko-cli/compare/v2.1.0...v2.1.1) (2026-04-01)
+
+
+### Bug Fixes
+
+* outdated schematic package.json ([#21](https://github.com/getndazn/kopytko-cli/issues/21)) ([1400e43](https://github.com/getndazn/kopytko-cli/commit/1400e4309b13ccf456e06e9bab1280e5ea2f5928))
+
 # [2.1.0](https://github.com/getndazn/kopytko-cli/compare/v2.0.2...v2.1.0) (2026-04-01)
 
 
